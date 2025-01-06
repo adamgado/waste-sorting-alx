@@ -1,0 +1,184 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
+/* Row Container */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin: 20px;
+}
+
+/* Card Styling */
+.card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 300px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Image */
+.card-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* Card Info */
+.card-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.card-info h3 {
+  margin: 10px 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.card-info p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #777;
+}
+
+/* Card Counter */
+.card-counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #eee;
+}
+
+.card-counter button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+// .card-counter  button:hover {
+//   background-color: yellow;
+// }
+
+.card-counter span {
+  margin: 0 15px;
+  font-size: 1.2rem;
+  color: #333;
+  min-width: 30px;
+  text-align: center;
+}
+.card-counter .negative{
+  background-color: red;
+
+}
+
+
+.btn {
+  width: 150px;
+  padding: 15px;
+  font-size: 20px;
+}
+
+.btn-left {
+  background-color: #007bff;
+  margin: 30px;
+  color: white;
+  border: none;
+}
+
+.btn-left:hover {
+  background-color: #0056b3;
+}
+
+.btn-right {
+  background-color: #28a745;
+  margin: 30px;
+  color: white;
+  border: none;
+}
+
+.btn-right:hover {
+  background-color: #218838;
+}
+
+
+
+
+
+
+
+
+
+/* Center the container on the page */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Styling for the category selection */
+.category-selection {
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px; /* Maximum width for the dropdown */
+}
+
+/* Label styling */
+.category-selection label {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Dropdown styling */
+.category-selection select.form-control {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Focus effect */
+.category-selection select.form-control:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Styling for the default option */
+.category-selection select.form-control option[disabled] {
+  color: #888;
+  font-style: italic;
+}

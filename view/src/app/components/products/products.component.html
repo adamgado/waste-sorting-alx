@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="category-selection">
+    <label for="category">Choose a Category to Recycle:</label>
+    <select id="category" class="form-control" #idSelect (change)="filter(idSelect.value)">
+      <option selected value="all">All categories</option>
+      @for (category of categories; track $index) {
+          <option [value]="category.name">
+              {{ category.name }}
+          </option>
+      }
+    </select>
+  </div>
+</div>
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
+
+  @for (prod of material; track $index) {
+      <div class="card">
+          <img [src]="prod.url_photo" alt="Item Image" class="card-image" />
+          <div class="card-info">
+          <h3>{{ prod.name }}</h3>
+          <p>{{ prod.categoryname }}</p>
+          <p>Recycle: {{ prod.recyclable ? 'Yes' : 'No' }}</p>
+          </div>
+          <div class="card-counter">
+          <button class="negative" (click)="decreaseCounter(prod.id)">-</button>
+          <span>{{ counter[prod.id] }}</span>
+          <button class="plus" (click)="increaseCounter(prod.id)">+</button>
+          </div>
+      </div>
+  }
+</div>
+
+
+<p *ngIf="err" class="alert alert-danger text-center rounded p-3 mb-3">
+  <i class="bi bi-exclamation-circle"></i> {{ err }}
+</p>
+
+<div class="d-flex justify-content-between mt-4">
+  <button class="btn btn-left" (click)="Discard()">Discard</button>
+  <button class="btn btn-right" (click)="Confirm()">Confirm</button>
+</div>
