@@ -1,0 +1,17 @@
+<div class="notification-page">
+  <h1>Notifications</h1>
+  <button (click)="clearNotifications()" class="clear-button">Clear All</button>
+
+  <div *ngIf="notifications.length === 0" class="empty-message">
+    <p>No notifications to display.</p>
+  </div>
+
+  <ul *ngIf="notifications.length > 0" class="notification-list">
+    <li *ngFor="let notification of notifications" class="notification-item">
+      <h2>{{ notification.title }}</h2>
+      <p [style.white-space]="'pre'">{{ notification.description }}</p>
+      <span>{{ notification.time | date: 'short' }}</span>
+      <span *ngIf="!notification.time">Invalid date</span>
+    </li>
+  </ul>
+</div>
