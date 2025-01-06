@@ -1,0 +1,64 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(120deg, #ff7eb3, #ff758c);
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  .action {
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .error-code {
+    font-size: 8rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .message {
+    font-size: 1.5rem;
+    margin: 20px 0;
+  }
+  
+  .home-link {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #63bf51;
+    background-color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .home-link:hover {
+    background-color: #1c6c26;
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
