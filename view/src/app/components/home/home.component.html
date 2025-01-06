@@ -1,0 +1,14 @@
+<div id="map" style="height: 550px;"></div>
+
+<br/>
+<!-- <button (click)="Move()">Move</button> -->
+
+<p *ngIf="err" class="alert alert-danger text-center rounded p-3 mb-3">
+  <i class="bi bi-exclamation-circle"></i> {{ err }}
+</p>
+<div class="button-container">
+  <button (click)="call()" class="call-machine-button">
+      <span class="icon">📞</span>
+      Call Machine
+  </button>
+</div>
