@@ -1,0 +1,43 @@
+<div class="navbar">
+  <div class="container">
+    <h2>Autonomous Robotic Waste Sorting</h2>
+
+  </div>
+
+  <div class="notification">
+    <img *ngIf="user && !haveNotification" (click)="onNotification()" src="images/not.png" alt="Profile Photo" />
+    <img *ngIf="user && haveNotification" (click)="onNotification()" src="images/ringing.png" alt="Profile Photo" />
+
+  </div>
+
+  @if (user) {
+    <div class="profile-photo">
+      <img [src]="user.urlphoto" (click)="onProfile()" alt="Profile Photo" />
+    </div>
+  }
+  @else {
+    <div class="if-not-login">
+      <button mat-button class="nav-btn" (click)="onLogin()"style ="color:black">Sign In</button>
+      <button mat-button class="nav-btn" (click)="onSignup()"style ="color:black">Sign Up</button>
+    </div>
+  }
+
+  <div class="toggle-button-row" (click)="toggleSlideOut()">
+    <img src="images/tl.png" alt="">
+  </div>
+
+</div>
+
+<div class="slide-out-panel" [class.slide-out]="isSlideOut">
+  <div class="slide-out-content">
+    <h3 class="nav">waste sorting</h3>
+    <p class="edit-col" (click)="onHome()">Home</p>
+    @if(user) { <p class="edit-col" (click)="onHistory()">Prev History</p> }
+    @if(user && user.role === "Admin") { 
+    <p class="edit-col" (click)="onMachinesList()">Machines List</p>
+    <p class="edit-col" (click)="onUsersList()">Users List</p> }
+    @if(user) { <p class="edit-col" (click)="onLogout()">Log Out</p> }
+  </div>
+</div>
+
+
