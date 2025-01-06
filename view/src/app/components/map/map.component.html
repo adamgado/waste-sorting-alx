@@ -1,0 +1,12 @@
+<google-map
+  [center]="center"
+  [zoom]="zoom"
+  [options]="options"
+  (mapClick)="onMapClick($event)"
+  style="height: 100%; width: 100%;">
+  <map-marker *ngIf="selectedPlace" [position]="selectedPlace"></map-marker>
+</google-map>
+
+<p *ngIf="selectedPlace">
+  Selected Coordinates: <strong>{{ selectedPlace.lat }}, {{ selectedPlace.lng }}</strong>
+</p>
