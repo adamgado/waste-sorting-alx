@@ -1,0 +1,41 @@
+<div class="profile-container">
+  <h1>User Profile</h1>
+
+  <!-- Profile Picture Section -->
+  <div class="profile-picture">
+    <img [src]="user?.urlphoto" alt="Profile Picture" />
+  </div>
+
+  <!-- View Mode -->
+  <div *ngIf="!editMode">
+    <p><strong>Name:</strong> {{ user?.name }}</p>
+    <p><strong>Email:</strong> {{ user?.email }}</p>
+    <p><strong>Gender:</strong> {{ (user?.gender === "m"? "male": "female") }}</p>
+    <div class="button-container">
+      <button class="edit-btn" (click)="toggleEditMode()">Edit Profile</button>
+      <button class="history-btn" (click)="viewHistory()">History</button>
+    </div>
+  </div>
+
+  <!-- Edit Mode -->
+  <form *ngIf="editMode" (submit)="saveProfile($event)">
+    <p *ngIf="err" class="alert alert-danger text-center rounded p-3 mb-3">
+      <i class="bi bi-exclamation-circle"></i> {{ err }}
+    </p>
+    <label>
+      Name:
+      <input id="name" value="{{ user.name }}" />
+    </label>
+    <label>
+      Email:
+      <input type="email" id="email" value="{{ user.email }}" />
+    </label>
+    
+    <label>
+      Upload Profile Picture:
+      <input type="file" (change)="onFileSelected($event)" />
+    </label>
+    <button type="submit" class="save-btn">Save</button>
+    <button class="cancel-btn" (click)="toggleEditMode()">Cancel</button>
+  </form>
+</div>
