@@ -1,0 +1,117 @@
+.user-list {
+  display: grid;
+  // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+  background-color: #f9f9f994;
+}
+
+.user-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #ffffff8a;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.user-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.user-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #4caf50;
+  object-fit: cover;
+}
+
+.user-info {
+  flex-grow: 1;
+  font-family: 'Arial', sans-serif;
+}
+
+.user-info h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.user-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.user-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.user-actions button {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.user-actions button:nth-child(1) {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+// .user-actions button:nth-child(2) {
+//   background-color: #f44336;
+//   color: #fff;
+// }
+
+.user-actions button:nth-child(2) {
+  background-color: #2196f3;
+  color: #fff;
+}
+
+.user-actions button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.user-actions button:active {
+  transform: translateY(0);
+  filter: brightness(0.9);
+}
+
+
+.edit-options {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-options button {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #ffc107;
+  color: #000;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.edit-options button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.edit-options button:active {
+  transform: translateY(0);
+  filter: brightness(0.9);
+}

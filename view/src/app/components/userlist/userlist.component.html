@@ -1,0 +1,22 @@
+<div class="user-list">
+  <div class="user-card" *ngFor="let user of users">
+    <img [src]="user.urlphoto" alt="{{ user.name }}" class="user-photo" />
+    <div class="user-info">
+      <h3>{{ user.name }}</h3>
+      <p>Role: {{ user.role }}</p>
+    </div>
+    <div class="user-actions">
+      <button (click)="toggleEdit(user.id)">Edit</button>
+      <!-- <button (click)="deleteUser(user.id)">Delete</button> -->
+      <button (click)="viewDetails(user.id)">Details</button>
+    </div>
+    <!-- User and Admin Options -->
+    <div
+      class="edit-options"
+      *ngIf="user.showEditOptions"
+    >
+      <button (click)="assignRole(user.id, 'User')">User</button>
+      <button (click)="assignRole(user.id, 'Admin')">Admin</button>
+    </div>
+  </div>
+</div>
