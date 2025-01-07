@@ -1,0 +1,42 @@
+<div class="machine-list-container">
+  <h1>Machine List</h1>
+
+  <!-- Search Section -->
+  <div class="search-container">
+      <input
+        type="text"
+        placeholder="Search by name..."
+        #idSearch
+        (keyup)="onSearch(idSearch.value)"
+        class="search-input"
+      />
+  </div>
+
+  <table>
+      <thead>
+          <tr>
+              <th>Name</th>
+              <th>Location</th>
+              <th>Actions</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let machine of filtered">
+              <td (click)="onDetails(machine.id)">{{ machine.name }}</td>
+              <td>{{ machine.latitude }}, {{ machine.longitude }}</td>
+              <td>
+                  <button (click)="editMachine(machine.id)" class="icon-btn edit-btn">
+                      <i class="fas fa-pen"></i>
+                  </button>
+                  <button (click)="deleteMachine(machine.id)" class="icon-btn delete-btn">
+                      <i class="fas fa-trash"></i>
+                  </button>
+                  <button *ngIf="!machine.sorted" (click)="sortMachineMaterial(machine.id)" class="icon-btn">
+                    <i class="fa-solid fa-layer-group"></i>
+                  </button>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+  <button class="add-machine-btn" (click)="addMachine()">Add Machine</button>
+</div>
