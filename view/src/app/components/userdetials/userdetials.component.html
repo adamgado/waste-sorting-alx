@@ -1,0 +1,19 @@
+<div class="user-details">
+    <h1>User Details</h1>
+    <div class="profile-section">
+      <div class="profile-picture">
+        <img [src]="user?.urlphoto || 'images/defProfile.jpg'" alt="Profile Picture" />
+      </div>
+      <div class="user-info">
+        <p><strong>Name:</strong> {{ user?.name }}</p>
+        <p><strong>Email:</strong> {{ user?.email }}</p>
+        <p *ngIf="user?.gender">
+          <strong>Gender:</strong> 
+          {{ user?.gender === 'm' ? 'Male' : user?.gender === 'f' ? 'Female' : 'Not Specified' }}
+        </p>
+  
+        <p><strong>Role:</strong> {{ user?.role }}</p>
+      </div>
+    </div>
+  </div>
+  
