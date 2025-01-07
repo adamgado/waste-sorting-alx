@@ -1,0 +1,73 @@
+/* Container styling */
+.container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+/* Table styling */
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.order-table th {
+  background-color: #28a745;
+  color: white;
+  text-align: left;
+  padding: 10px;
+}
+
+.order-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Hover effect for table rows */
+.order-table tr {
+  transition: background-color 0.3s;
+}
+
+.order-table tr:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+/* Highlight selected row */
+.order-table tr.selected-row {
+  background-color: #d4edda;
+}
+
+/* Styling for the dropdown details row */
+.details-row {
+  background-color: #f8f9fa;
+}
+
+.details {
+  padding: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.details ul {
+  margin: 5px 0 0 20px;
+  padding: 0;
+  list-style-type: disc;
+}
+
+.details li {
+  margin: 5px 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .order-table th, .order-table td {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .details {
+    font-size: 12px;
+  }
+}

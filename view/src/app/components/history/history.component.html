@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>{{ title }}</h1>
+  <table class="order-table">
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Machine Name</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Iterate over orders -->
+      <ng-container *ngFor="let order of orders">
+        <tr (click)="toggleDetails(order.id)" [class.selected-row]="expandedOrderId === order.id">
+          <td>{{ order.id }}</td>
+          <td>{{ order.machinename }}</td>
+          <td [style]="order.status? 'color: green': 'color: red'">{{ order.status? 'Confirmed': 'Not confirmed yet' }}</td>
+        </tr>
+        <tr *ngIf="expandedOrderId === order.id" class="details-row">
+          <td colspan="3" class="details">
+            <p><strong>Materials in the Machine:</strong></p>
+            <ul>
+              <li *ngFor="let material of order.materials">
+                {{ material.name }} - Quantity: {{ material.quantity }}
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
