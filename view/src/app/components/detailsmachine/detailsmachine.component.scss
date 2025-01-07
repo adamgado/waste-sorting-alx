@@ -1,0 +1,69 @@
+/* General layout settings */
+.machine-details {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #19875496;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Title Styling */
+.machine-details h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Container for machine details */
+.details {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 1.1rem;
+}
+
+/* Style for each machine detail item */
+.details p {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* Bold text for the labels */
+strong {
+  font-weight: 700;
+  color: #555;
+}
+
+/* Add hover effect to details */
+.details p:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Add styles for responsiveness */
+@media (max-width: 768px) {
+  .machine-details {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .machine-details h1 {
+    font-size: 1.6rem;
+  }
+
+  .details {
+    padding: 15px;
+  }
+}
