@@ -1,0 +1,56 @@
+<div class="add-machine-container">
+  <h2>edit Machine</h2>
+
+  <form (submit)="onSubmit($event)">
+    <p *ngIf="err" class="alert alert-danger text-center rounded p-3 mb-3">
+      <i class="bi bi-exclamation-circle"></i> {{ err }}
+    </p>
+    <div class="form-group">
+      <label for="machineName">Machine Name</label>
+      <input
+        type="text"
+        id="machineName"
+        formControlName="machineName"
+        value="{{ machine.name }}"
+        required
+      />
+    </div>
+
+
+    <div class="form-group">
+      <label for="status">Machine Status</label>
+      <select id="status" required>
+        <option value="on" *ngIf="machine.state != 'on'">on</option>
+        <option value="on" *ngIf="machine.state == 'on'" selected>on</option>
+        <option value="off" *ngIf="machine.state != 'off'">off</option>
+        <option value="off" *ngIf="machine.state == 'off'" selected>off</option>
+        <option value="maintenance" *ngIf="machine.state != 'maintenance'">maintenance</option>
+        <option value="maintenance" *ngIf="machine.state == 'maintenance'" selected>maintenance</option>
+      </select>
+    </div>
+
+
+
+    <div class="form-group">
+      <label for="map">Map</label>
+      <!-- ////////////////////////////////////////////////////// -->
+      <!-- <div id="map" style="height: 600px; width: 100%;"></div> -->
+
+      <google-map
+        [center]="center"
+        [zoom]="zoom"
+        [options]="options"
+        (mapClick)="onMapClick($event)"
+        style="height: 100%; width: 100%;">
+        <map-marker *ngIf="selectedPlace" [position]="selectedPlace!"></map-marker>
+      </google-map>
+      <p *ngIf="selectedPlace">
+        Selected Coordinates: <strong>{{ selectedPlace.lat }}, {{ selectedPlace.lng }}</strong>
+      </p>
+      <!-- ////////////////////////////////////////////////////////// -->
+    </div>
+
+    <button class="add-machine-btn" (click)="1">save</button>
+
+  </form>
+</div>
